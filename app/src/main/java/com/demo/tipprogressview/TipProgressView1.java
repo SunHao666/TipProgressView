@@ -161,4 +161,37 @@ public class TipProgressView1 extends View {
                 spVal, getResources().getDisplayMetrics());
 
     }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int width = 0;
+        int height = 0;
+
+        int defaultHeight = proBarHeight+tipSanHeight+tipRoundHeight;
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+        if(widthMode == MeasureSpec.EXACTLY){
+            width = widthSize;
+        }else if(widthMode == MeasureSpec.AT_MOST){
+            width = widthSize;
+        }else if(widthMode == MeasureSpec.UNSPECIFIED){
+            width = widthSize;
+        }
+
+        if(heightMode == MeasureSpec.EXACTLY){
+            height = heightSize;
+        }else if(heightMode == MeasureSpec.AT_MOST){
+            height = defaultHeight;
+        }else if(heightMode == MeasureSpec.UNSPECIFIED){
+            height = heightSize;
+        }
+        setMeasuredDimension(width,height);
+
+
+
+    }
 }

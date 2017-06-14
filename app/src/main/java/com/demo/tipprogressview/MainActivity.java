@@ -10,6 +10,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TipProgressView1 tipview = (TipProgressView1) findViewById(R.id.tipview);
-        tipview.doAnim(10);
+        tipview.doAnim(100);
     }
 }
